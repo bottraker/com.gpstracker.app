@@ -83,7 +83,7 @@ class LocationService : Service() {
         return NotificationCompat.Builder(this, "location_channel")
             .setContentTitle("Rastreador Activo")
             .setContentText("Enviando ubicación al servidor.")
-            .setSmallIcon(R.drawable.ic_location_on) // Asegúrate de tener este icono
+            .setSmallIcon(R.mipmap.ic_launcher) // Asegúrate de tener este icono
             .setOngoing(true)
             .build()
     }
