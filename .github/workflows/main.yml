@@ -33,11 +33,14 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
 
+    # --- PASO NUEVO Y MUY IMPORTANTE ---
+    # Acepta automáticamente las licencias del SDK de Android
+    - name: Accept Android SDK licenses
+      run: yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
+
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
-    # --- CAMBIO AQUÍ ---
-    # Se actualiza de v3 a v4, que es la versión nueva y recomendada.
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
